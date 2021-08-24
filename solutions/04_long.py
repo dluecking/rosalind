@@ -12,7 +12,7 @@ Return: A shortest superstring containing all the given strings (thus correspond
 
 from Bio import SeqIO
 
-FILE="data/rosalind_long.txt"
+# FILE="data/rosalind_long.txt"
 FILE="test_data/04_long.fasta"
 
 records = list(SeqIO.parse(FILE, "fasta"))
@@ -30,21 +30,24 @@ def glue(s, t):
             if i + j >= len(s) or j >= len(t):
                 return(s[:i]+t)
 
-def ShrinkList(list_of_seqs):
+def shrinkList(list_of_seqs):
     new_list = []
     for seq1 in list_of_seqs:
         for seq2 in list_of_seqs:
             if seq1 != seq2:
                 super_string = glue(seq1, seq2)
                 if super_string is not None:
+                    print("seq1 = {} -- seq2 = {}".format(seq1, seq2))
+                    print("superstring = {}".format(super_string))
                     new_list.append(super_string)
                     break
     return(list(set(new_list)))
 
 def assemble2(list_of_seqs):
     while len(list_of_seqs) > 1:
-        list_of_seqs = ShrinkList(list_of_seqs)
+        list_of_seqs = shrinkList(list_of_seqs)
     return(list_of_seqs[0])
 
-
+    
 print(assemble2(l))
+
