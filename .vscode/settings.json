@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/domi/bin/miniconda3/envs/rosalind/bin/python3.9"
+    "python.pythonPath": "/home/domi/bin/miniconda3/envs/rosalind/bin/python3.9",
+    "python.formatting.provider": "black"
 }

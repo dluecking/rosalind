@@ -12,3 +12,5 @@ This repo contains the solutions for the problems I'm solving on [rosalind.info]
 ##### WIP
 - long
 - tree
+- fibd
+- lia
